@@ -1,5 +1,6 @@
 """Module defines asset characteristics."""
 
 
-class Asset():
-    pass
+# pylint: disable=R0903
+class Asset:
+    """Class defines asset characteristics."""
