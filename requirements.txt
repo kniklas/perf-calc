@@ -1,0 +1,5 @@
+pytest
+pytest-watch
+black
+pylint
+yamllint
