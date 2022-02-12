@@ -42,7 +42,6 @@ jobs:
           COVERALLS_PARALLEL: true
         run: |
           coveralls --service=github
-            coveralls_finish:
 
   coveralls_finish:
     name: Coveralls completion
