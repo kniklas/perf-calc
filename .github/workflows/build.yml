@@ -46,7 +46,7 @@ jobs:
 
   coveralls_finish:
     name: Coveralls completion
-    needs: test
+    needs: build
     runs-on: ubuntu-latest
     container: python:3-slim
     steps:
