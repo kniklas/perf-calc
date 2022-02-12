@@ -1,6 +1,7 @@
 pytest
 pytest-watch
 coverage
+python-coveralls
 black
 pylint
 yamllint
