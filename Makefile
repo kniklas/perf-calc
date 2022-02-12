@@ -5,6 +5,7 @@ setup:
 	python -m pip install --upgrade pip
 	if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 	@echo "Completed setup"
+
 lint:
 	@echo "Starting lint"
 	find . -name "*.yml" | xargs python -m yamllint
@@ -13,7 +14,10 @@ lint:
 	@echo "Completed lint"
 
 test:
-	pytest
+	@echo "Starting tests"
+	coverage run -m --source=src/ -m pytest
+	coverage report -m
+	@echo "Completed tests"
 
 clean:
 	@echo "Starting clean"

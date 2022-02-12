@@ -12,4 +12,4 @@ Then you can use your virtual environment and activate it using command: `pyenv 
 
 * `make setup` - install all dependencies from `requirements.txt` file
 * `make lint` - run linting checks for Python and Yaml and Black code formatting checks
-* `make test` - execute unit tests
+* `make test` - execute unit tests and prints coverage report
