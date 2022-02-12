@@ -12,6 +12,7 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   build:
+    name: Build checks and coveralls
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -35,3 +36,22 @@ jobs:
       - name: Test
         run: |
           make test
+      - name: Coveralls
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_PARALLEL: true
+        run: |
+          coveralls --service=github
+
+  coveralls_finish:
+    name: Coveralls completion
+    needs: build
+    runs-on: ubuntu-latest
+    container: python:3-slim
+    steps:
+      - name: Coveralls Finished
+        run: |
+          pip3 install --upgrade coveralls
+          coveralls --service=github --finish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
