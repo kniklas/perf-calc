@@ -37,3 +37,7 @@ class Asset:
     def _set_default_lang(self, default_lang):
         """Set default fund name language."""
         self.default_lang = default_lang
+
+    def __str__(self):
+        """Display asset characteristics."""
+        return f"{self.ccy}"

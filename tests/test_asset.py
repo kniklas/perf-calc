@@ -25,6 +25,10 @@ def test_create_asset(new_asset):
     assert new_asset.default_lang == "PL"
 
 
+def test_print_asset(new_asset):
+    assert new_asset.__str__() == "USD"
+
+
 def test_wrong_asset_language_name():
     with pytest.raises(ValueError):
         fund_dict = {"EN": "Equity Fund", "PL": "Fundusz Akcji"}
